@@ -90,6 +90,31 @@ public class AdapterProducts extends RecyclerView.Adapter<AdapterProducts.ViewHo
         }
         Bitmap bitmap = ((BitmapDrawable)holder.mProductThumbnail.getDrawable()).getBitmap();
         holder.mProductThumbnail.setImageBitmap(bitmap);
+
+        holder.mDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, products.get(position).toString(),
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+        holder.mProductPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent activityProd = new Intent(v.getContext() , ActivityProduct.class);
+                context.startActivity(activityProd);
+            }
+        });
+        holder.mEventLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent activityProd = new Intent(v.getContext() , ActivityProduct.class);
+                activityProd.putExtra("ITEM", products.get(position));
+                context.startActivity(activityProd);
+            }
+        });
     }
 
     public int getItemCount(){

@@ -110,7 +110,14 @@ public class ActivityMain extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position){
                 case commons.IDX_Section1:
-                    return new FragmentTechnology();
+                    if(getIntent().getExtras() != null) {
+                        Bundle bundle = new Bundle();
+                        bundle.putParcelable("ITEM", getIntent().getParcelableExtra("ITEM"));
+                        Fragment fragment = new FragmentTechnology();
+                        fragment.setArguments(bundle);
+                        return fragment;
+                    } else{
+                    return new FragmentTechnology();}
                 case commons.IDX_Section2:
                     return new FragmentHome();
                 case commons.IDX_Section3:

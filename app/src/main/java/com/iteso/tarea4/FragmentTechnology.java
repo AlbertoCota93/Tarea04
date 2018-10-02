@@ -45,8 +45,38 @@ public class FragmentTechnology extends Fragment {
         itemProduct.setPhone("33 123345678");
         itemProduct.setImage(0);
         itemProduct.setDescription(" Llevate esta Mac con un 30% de descuento para que puedas programar para XCode y Android sin tener que batallar tanto como en tu Windows" );
-        myDataSet.add(itemProduct);
 
+
+        ItemProduct itemProduct2 = new ItemProduct();
+        itemProduct2.setTitle("Alienware");
+        itemProduct2.setStore("BestBuy");
+        itemProduct2.setLocation("Zapopan, Jalisco");
+        itemProduct2.setPhone("33 123345678");
+        itemProduct2.setImage(1);
+        itemProduct2.setDescription(" Llevate esta Mac con un 30% de descuento para que puedas programar para XCode y Android sin tener que batallar tanto como en tu Mac" );
+
+
+        if(this.getArguments() != null) {
+            ItemProduct itemProductParce = new ItemProduct();
+            itemProductParce = (ItemProduct) this.getArguments().getParcelable("ITEM");
+            switch (itemProductParce.getImage()) {
+                case 0:
+                    itemProduct.setTitle(itemProductParce.getTitle());
+                    itemProduct.setStore(itemProductParce.getStore());
+                    itemProduct.setLocation(itemProductParce.getLocation());
+                    itemProduct.setPhone(itemProductParce.getPhone());
+                    break;
+                case 1:
+                    itemProduct2.setTitle(itemProductParce.getTitle());
+                    itemProduct2.setStore(itemProductParce.getStore());
+                    itemProduct2.setLocation(itemProductParce.getLocation());
+                    itemProduct2.setPhone(itemProductParce.getPhone());
+                    break;
+            }
+        }
+
+        myDataSet.add(itemProduct2);
+        myDataSet.add(itemProduct);
 
         mAdapter= new AdapterProducts(getActivity(),myDataSet);
         recyclerView.setAdapter(mAdapter);
