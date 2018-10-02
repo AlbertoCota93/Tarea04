@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.iteso.test.beans.ItemProduct;
+import com.iteso.tarea4.beans.ItemProduct;
 
 import java.util.ArrayList;
 

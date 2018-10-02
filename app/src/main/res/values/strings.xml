@@ -7,7 +7,13 @@
     <string name="fragment_home_text">Home Stuff Goes Here!</string>
     <string name="fragment_Electronic_text">Electronics Stuff Goes Here!</string>
     <string name="action_settings">Settings</string>
+    <string name="edit_store">Introduce Store</string>
+    <string name="edit_title">Introduce Title</string>
+    <string name="edit_location">Introduce Location</string>
+    <string name="edit_phone">Introduce Phone</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

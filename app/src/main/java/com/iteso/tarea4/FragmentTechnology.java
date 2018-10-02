@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.iteso.test.beans.ItemProduct;
+import com.iteso.tarea4.beans.ItemProduct;
 
 import java.util.ArrayList;
 
@@ -47,14 +47,6 @@ public class FragmentTechnology extends Fragment {
         itemProduct.setDescription(" Llevate esta Mac con un 30% de descuento para que puedas programar para XCode y Android sin tener que batallar tanto como en tu Windows" );
         myDataSet.add(itemProduct);
 
-        ItemProduct itemProduct2 = new ItemProduct();
-        itemProduct2.setTitle("Alienware");
-        itemProduct2.setStore("BestBuy");
-        itemProduct2.setLocation("Zapopan, Jalisco");
-        itemProduct2.setPhone("33 123345678");
-        itemProduct2.setImage(1);
-        itemProduct2.setDescription(" Llevate esta Mac con un 30% de descuento para que puedas programar para XCode y Android sin tener que batallar tanto como en tu Mac" );
-        myDataSet.add(itemProduct2);
 
         mAdapter= new AdapterProducts(getActivity(),myDataSet);
         recyclerView.setAdapter(mAdapter);
